@@ -59,6 +59,7 @@ ansiColor('xterm') {
           sshagent(['6c8a75fb-5e5f-4803-9b6d-1933a3111a34']) {
             sh "echo git push upstream HEAD:js-sdk/${version}"
           }
+          archiveArtifacts artifacts: 'package.json'
         }
       }
     }
