@@ -46,7 +46,7 @@ ansiColor('xterm') {
 
         stage('Branching') {
           echo "Creating Branch"
-          def version = sh script: 'npm view ciscospark version', returnStdout: true
+          def version = sh script: 'node ./scripts/utils/jssdkversion.js', returnStdout: true
           version = version.trim()
           sh '''#!/bin/bash -ex
           git add package.json
