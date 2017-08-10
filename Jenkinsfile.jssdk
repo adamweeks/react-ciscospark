@@ -46,7 +46,11 @@ ansiColor('xterm') {
 
         stage('Branching') {
           echo "Creating Branch"
-          def version = sh script: 'node ./scripts/utils/jssdkversion.js', returnStdout: true
+          def version = sh script: '''#!/bin/bash -ex
+          source ~/.nvm/nvm.sh
+          nvm use v7
+          node ./scripts/utils/jssdkversion.js
+          ''', returnStdout: true
           version = version.trim()
           sh '''#!/bin/bash -ex
           git add package.json
