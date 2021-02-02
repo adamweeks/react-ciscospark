@@ -7,7 +7,7 @@ module.exports = {
   builder: {},
   handler: ({packageName}) => {
     if (packageName) {
-      return updatePackageJson(getPackage(packageName));
+      return updatePackageJson(getPackage(packageName), packageName);
     }
 
     return updateAllPackageJson();

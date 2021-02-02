@@ -52,6 +52,8 @@ function updatePackageJson(pkgPath, packages, topPkgJson) {
             return detective(code);
           }
           catch (e) {
+            console.error('Unable to parse file, ', srcFile, e);
+
             return [];
           }
         }
